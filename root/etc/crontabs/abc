@@ -1,0 +1,2 @@
+# min   hour    day     month   weekday command
+*       *       *       *       *       /usr/bin/php /app/www/artisan schedule:run

@@ -1,0 +1,1 @@
+speedtest-tracker: https://github.com/sponsors/alexjustesen
