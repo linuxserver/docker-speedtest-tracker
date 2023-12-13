@@ -18,7 +18,8 @@ RUN \
     php82-pdo_sqlite \
     php82-pecl-redis \
     php82-tokenizer \
-    php82-xmlreader && \
+    php82-xmlreader \
+    ssmtp && \
   echo "*** install speedtest-cli ***" && \
   if [ -z ${CLI_VERSION+x} ]; then \
     CLI_VERSION=$(curl -Ls https://packagecloud.io/ookla/speedtest-cli/debian/dists/bookworm/main/binary-arm64/Packages \
