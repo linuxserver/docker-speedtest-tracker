@@ -20,6 +20,8 @@ RUN \
     php82-tokenizer \
     php82-xmlreader \
     ssmtp && \
+  apk add --no-cache --virtual=build-dependencies \
+    npm && \
   echo "*** install speedtest-cli ***" && \
   if [ -z ${CLI_VERSION+x} ]; then \
     CLI_VERSION=$(curl -Ls https://packagecloud.io/ookla/speedtest-cli/debian/dists/bookworm/main/binary-amd64/Packages \
@@ -55,6 +57,7 @@ RUN \
     --optimize-autoloader \
     --no-dev \
     --no-cache && \
+  npm ci && npm run build && \
   echo "**** setup php opcache ****" && \
   { \
     echo 'opcache.enable_cli=1'; \
@@ -64,9 +67,12 @@ RUN \
     echo 'upload_max_filesize = 100M'; \
     echo 'variables_order = EGPCS'; \
   } > /etc/php82/conf.d/php-misc.ini && \
+  echo "**** cleanup ****" && \
+  apk del --purge build-dependencies && \
   rm -rf \
     $HOME/.cache \
-    $HOME/.composer \
+    $HOME/.npm \
+    /app/www/node_modules \
     /tmp/*
 
 COPY root/ /
