@@ -9,9 +9,6 @@ lsiown -R abc:abc \
     /app/www/storage \
     /app/www/database
 
-# Clear old cache
-s6-setuidgid abc php /app/www/artisan optimize:clear --no-ansi -q
-
 if [[ ${DB_CONNECTION:="sqlite"} = "sqlite" ]]; then
     # create symlinks
     symlinks=( \
