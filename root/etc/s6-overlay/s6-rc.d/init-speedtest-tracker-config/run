@@ -4,27 +4,54 @@
 lsiown abc:abc \
     /config
 
+if [[ "${DB_CONNECTION:=sqlite}" = "sqlite" ]]; then
+    touch /config/database.sqlite
+    if [[ -e "/app/www/database/database.sqlite" && ! -L "/app/www/database/database.sqlite" ]]; then
+        rm -rf "/app/www/database/database.sqlite"
+    fi
+    if [[ ! -L "/app/www/database/database.sqlite" ]]; then
+        ln -s "/config/database.sqlite" "/app/www/database/database.sqlite"
+    fi
+elif [[ "${DB_CONNECTION}" = "mysql" ]]; then
+    echo "Waiting for DB to be available"
+    END=$((SECONDS + 30))
+    while [[ ${SECONDS} -lt ${END} ]] && [[ -n "${DB_HOST+x}" ]]; do
+        if [[ $(/usr/bin/nc -w1 "${DB_HOST}" "${DB_PORT}" | tr -d '\0') ]]; then
+            if [[ -n "${RUN}" ]]; then
+                break
+            fi
+            RUN="RAN"
+            # we sleep here again due to first run init on DB containers
+            if [[ ! -f /dbwait.lock ]]; then
+                sleep 5
+            fi
+        else
+            sleep 1
+        fi
+    done
+elif [[ "${DB_CONNECTION}" = "pgsql" ]]; then
+    echo "Waiting for DB to be available"
+    END=$((SECONDS + 30))
+    while [[ ${SECONDS} -lt ${END} ]] && [[ -n "${DB_HOST+x}" ]]; do
+        if pg_isready -h "${DB_HOST}" -p "${DB_PORT}" -q; then
+            if [[ -n "${RUN}" ]]; then
+                break
+            fi
+            RUN="RAN"
+            # we sleep here again due to first run init on DB containers
+            if [[ ! -f /dbwait.lock ]]; then
+                sleep 5
+            fi
+        else
+            sleep 1
+        fi
+    done
+fi
+
 lsiown -R abc:abc \
     /app/www/bootstrap/cache \
     /app/www/storage \
     /app/www/database
-
-if [[ ${DB_CONNECTION:="sqlite"} = "sqlite" ]]; then
-    # create symlinks
-    symlinks=( \
-    /app/www/database/database.sqlite \
-    )
-
-    for i in "${symlinks[@]}"
-    do
-        if [[ -e "$i" && ! -L "$i" ]]; then
-            rm -rf "$i"
-        fi
-        if [[ ! -L "$i" ]]; then
-            ln -s /config/"$(basename "$i")" "$i"
-        fi
-    done
-fi
 
 # Check for env file
 if [[ ! -f /config/.env ]]; then
