@@ -5,12 +5,20 @@ lsiown abc:abc \
     /config
 
 if [[ "${DB_CONNECTION:=sqlite}" = "sqlite" ]]; then
-    touch /config/database.sqlite
-    if [[ -e "/app/www/database/database.sqlite" && ! -L "/app/www/database/database.sqlite" ]]; then
-        rm -rf "/app/www/database/database.sqlite"
-    fi
-    if [[ ! -L "/app/www/database/database.sqlite" ]]; then
-        ln -s "/config/database.sqlite" "/app/www/database/database.sqlite"
+    if [[ -n "${DB_DATABASE}" ]]; then
+        if [[ ! -e "${DB_DATABASE}" ]]; then
+            touch "${DB_DATABASE}"
+            lsiown abc:abc "${DB_DATABASE}"
+        fi
+    else
+        touch /config/database.sqlite
+        if [[ -e "/app/www/database/database.sqlite" && ! -L "/app/www/database/database.sqlite" ]]; then
+            rm -rf "/app/www/database/database.sqlite"
+        fi
+        if [[ ! -L "/app/www/database/database.sqlite" ]]; then
+            ln -s "/config/database.sqlite" "/app/www/database/database.sqlite"
+        fi
+        lsiown abc:abc /app/www/database/database.sqlite
     fi
 elif [[ "${DB_CONNECTION}" = "mysql" ]]; then
     echo "Waiting for DB to be available"
@@ -50,8 +58,7 @@ fi
 
 lsiown -R abc:abc \
     /app/www/bootstrap/cache \
-    /app/www/storage \
-    /app/www/database
+    /app/www/storage
 
 # Check for env file
 if [[ ! -f /config/.env ]]; then

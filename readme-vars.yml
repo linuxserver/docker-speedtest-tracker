@@ -30,6 +30,7 @@ param_ports:
 
 opt_param_usage_include_env: true
 opt_param_env_vars:
+  - { env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. Generate with `docker exec speedtest-tracker php /app/www/artisan key:generate --show`" }
   - { env_var: "DB_HOST", env_value: "", desc: "Database hostname (postgres/mysql)." }
   - { env_var: "DB_PORT", env_value: "", desc: "Database port (postgres/mysql)." }
   - { env_var: "DB_DATABASE", env_value: "", desc: "Database name (postgres/mysql)." }
