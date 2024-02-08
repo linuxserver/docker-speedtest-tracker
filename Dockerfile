@@ -19,6 +19,7 @@ RUN \
     php82-pecl-redis \
     php82-tokenizer \
     php82-xmlreader \
+    postgresql15-client \
     ssmtp && \
   apk add --no-cache --virtual=build-dependencies \
     npm && \
