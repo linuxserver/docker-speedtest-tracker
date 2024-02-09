@@ -1,0 +1,31 @@
+---
+
+# jenkins variables
+project_name: docker-speedtest-tracker
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: main
+repo_vars:
+  - EXT_GIT_BRANCH = 'main'
+  - EXT_USER = 'alexjustesen'
+  - EXT_REPO = 'speedtest-tracker'
+  - BUILD_VERSION_ARG = 'SPEEDTEST_TRACKER_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-speedtest-tracker'
+  - CONTAINER_NAME = 'speedtest-tracker'
+  - DOCKERHUB_IMAGE = 'linuxserver/speedtest-tracker'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/speedtest-tracker'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/speedtest-tracker'
+  - DIST_IMAGE = 'alpine'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='true'
+  - CI_PORT='80'
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=Europe/London'
+  - CI_AUTH='user:password'
+  - CI_WEBPATH=''
+sponsor_links:
+  - { name: "speedtest-tracker", url: "https://github.com/sponsors/alexjustesen" }

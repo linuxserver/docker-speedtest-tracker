@@ -1,0 +1,47 @@
+---
+# project information
+project_name: speedtest-tracker
+project_url: "https://github.com/alexjustesen/speedtest-tracker"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/speedtest-tracker-logo.png"
+project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a self-hosted internet performance tracking application that runs speedtest checks against Ookla's Speedtest service."
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_blurb_optional_extras_enabled: false
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+
+# development version
+development_versions: false
+
+# container parameters
+common_param_env_vars_enabled: true
+param_container_name: "{{ project_name }}"
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "DB_CONNECTION", env_value: "sqlite", desc: "Set the database type to use. `sqlite`, `pgsql`, or `mysql`" }
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "Contains speedtest-tracker config and database, if using sqlite." }
+param_usage_include_ports: true
+param_ports:
+  - { external_port: "80", internal_port: "80", port_desc: "Web UI" }
+
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. Generate with `docker exec speedtest-tracker php /app/www/artisan key:generate --show`" }
+  - { env_var: "DB_HOST", env_value: "", desc: "Database hostname (postgres/mysql)." }
+  - { env_var: "DB_PORT", env_value: "", desc: "Database port (postgres/mysql)." }
+  - { env_var: "DB_DATABASE", env_value: "", desc: "Database name (postgres/mysql)." }
+  - { env_var: "DB_USERNAME", env_value: "", desc: "Database username (postgres/mysql)." }
+  - { env_var: "DB_PASSWORD", env_value: "", desc: "Database password (postgres/mysql)." }
+
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  Access the web UI at `<your-ip>:80`, for more information check out the [project documentation](https://docs.speedtest-tracker.dev/).
+
+# changelog
+changelogs:
+  - { date: "10.02.24:", desc: "Initial Release." }
