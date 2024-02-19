@@ -25,7 +25,6 @@ carbonphp/carbon-doctrine-types              2.1.0                   php-compose
 chrisullyott/php-filesize                    v4.2.1                  php-composer  
 clue/stream-filter                           v1.7.0                  php-composer  
 composer                                     2.7.1                   binary        
-composer/semver                              3.4.0                   php-composer  
 coreutils                                    9.3-r2                  apk           
 curl                                         8.5.0-r0                apk           
 danharrin/date-format-converter              v0.3.0                  php-composer  
@@ -39,7 +38,6 @@ doctrine/inflector                           2.0.9                   php-compose
 doctrine/lexer                               3.0.1                   php-composer  
 dragonmantank/cron-expression                v3.3.3                  php-composer  
 egulias/email-validator                      4.0.2                   php-composer  
-ezyang/htmlpurifier                          v4.17.0                 php-composer  
 filament/actions                             v3.2.34                 php-composer  
 filament/filament                            v3.2.34                 php-composer  
 filament/forms                               v3.2.34                 php-composer  
@@ -119,10 +117,7 @@ logrotate                                    3.21.0-r1               apk
 lorisleiva/laravel-actions                   v2.7.3                  php-composer  
 lorisleiva/lody                              v0.4.0                  php-composer  
 lz4-libs                                     1.9.4-r4                apk           
-maatwebsite/excel                            3.1.53                  php-composer  
 maennchen/zipstream-php                      2.4.0                   php-composer  
-markbaker/complex                            3.0.2                   php-composer  
-markbaker/matrix                             3.0.1                   php-composer  
 masterminds/html5                            2.8.1                   php-composer  
 monolog/monolog                              3.5.0                   php-composer  
 musl                                         1.2.4-r2                apk           
@@ -179,7 +174,6 @@ php82-xmlwriter                              8.2.13-r0               apk
 php82-zip                                    8.2.13-r0               apk           
 phpdocumentor/reflection-common              2.2.0                   php-composer  
 phpdocumentor/type-resolver                  1.8.0                   php-composer  
-phpoffice/phpspreadsheet                     1.29.0                  php-composer  
 phpoption/phpoption                          1.9.2                   php-composer  
 phpstan/phpdoc-parser                        1.25.0                  php-composer  
 popt                                         1.19-r2                 apk           
