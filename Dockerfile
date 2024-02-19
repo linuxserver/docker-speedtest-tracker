@@ -8,6 +8,8 @@ ARG SPEEDTEST_TRACKER_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="thespad"
 
+ENV HOME=/config
+
 RUN \
   apk add --no-cache \
     grep \
