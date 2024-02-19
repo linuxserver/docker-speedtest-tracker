@@ -20,6 +20,8 @@ if [[ "${DB_CONNECTION:=sqlite}" = "sqlite" ]]; then
         fi
         lsiown abc:abc /app/www/database/database.sqlite
     fi
+    export DB_CONNECTION=sqlite
+    echo "sqlite" > /run/s6/container_environment/DB_CONNECTION
 elif [[ "${DB_CONNECTION}" = "mysql" ]]; then
     echo "Waiting for DB to be available"
     END=$((SECONDS + 30))
