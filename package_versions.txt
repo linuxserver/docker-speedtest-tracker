@@ -177,7 +177,7 @@ phpdocumentor/type-resolver                  1.8.2                   php-compose
 phpoption/phpoption                          1.9.2                   php-composer    
 phpstan/phpdoc-parser                        1.26.0                  php-composer    
 popt                                         1.19-r2                 apk             
-postgresql-common                            1.2-r0                  apk             
+postgresql-common                            1.2-r1                  apk             
 postgresql15-client                          15.6-r0                 apk             
 procps-ng                                    4.0.4-r0                apk             
 psr/cache                                    3.0.0                   php-composer    
