@@ -28,7 +28,7 @@ Find us at:
 
 # [linuxserver/speedtest-tracker](https://github.com/linuxserver/docker-speedtest-tracker)
 
-[![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fspeedtest-tracker?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Fspeedtest-tracker)
+[![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fspeedtest-tracker?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh)
 [![GitHub Stars](https://img.shields.io/github/stars/linuxserver/docker-speedtest-tracker.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-speedtest-tracker)
 [![GitHub Release](https://img.shields.io/github/release/linuxserver/docker-speedtest-tracker.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-speedtest-tracker/releases)
 [![GitHub Package Repository](https://img.shields.io/static/v1.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=linuxserver.io&message=GitHub%20Package&logo=github)](https://github.com/linuxserver/docker-speedtest-tracker/packages)
@@ -292,5 +292,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **16.04.24:** - Rebase to alpine 3.19, upgrade to php 8.3.
+* **24.05.24:** - Rebase to Alpine 3.20.
+* **16.04.24:** - Rebase to Alpine 3.19, upgrade to php 8.3.
 * **10.02.24:** - Initial Release.
