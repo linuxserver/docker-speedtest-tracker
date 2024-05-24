@@ -44,5 +44,6 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "16.04.24:", desc: "Rebase to alpine 3.19, upgrade to php 8.3." }
+  - { date: "24.05.24:", desc: "Rebase to Alpine 3.20." }
+  - { date: "16.04.24:", desc: "Rebase to Alpine 3.19, upgrade to php 8.3." }
   - { date: "10.02.24:", desc: "Initial Release." }
