@@ -1,11 +1,13 @@
-## Version 2023/04/13 - Changelog: https://github.com/linuxserver/docker-speedtest-tracker/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+## Version 2024/05/28 - Changelog: https://github.com/linuxserver/docker-speedtest-tracker/commits/master/root/defaults/nginx/site-confs/default.conf.sample
 
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    listen 443 ssl http2 default_server;
-    listen [::]:443 ssl http2 default_server;
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    http2 on;
 
     server_name _;
 
