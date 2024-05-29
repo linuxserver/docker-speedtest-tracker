@@ -89,7 +89,7 @@ libbsd                                       0.12.2-r0              apk
 libbz2                                       1.0.8-r6               apk             
 libcrypto3                                   3.3.0-r2               apk             
 libcurl                                      8.7.1-r0               apk             
-libdav1d                                     1.4.1-r0               apk             
+libdav1d                                     1.4.2-r0               apk             
 libedit                                      20240517.3.1-r0        apk             
 libexpat                                     2.6.2-r0               apk             
 libgcc                                       13.2.1_git20240309-r0  apk             
@@ -138,7 +138,7 @@ netcat-openbsd                               1.226-r0               apk
 nette/schema                                 v1.3.0                 php-composer    
 nette/utils                                  v4.0.4                 php-composer    
 nghttp2-libs                                 1.62.0-r0              apk             
-nginx                                        1.26.0-r1              apk             
+nginx                                        1.26.0-r2              apk             
 nikic/php-parser                             v5.0.2                 php-composer    
 nunomaduro/termwind                          v1.15.1                php-composer    
 oniguruma                                    6.9.9-r0               apk             
