@@ -85,9 +85,8 @@ done
 # Check for app key
 if [[ -z ${APP_KEY} ]]; then
     if ! grep -E "APP_KEY=[0-9A-Za-z:+\/=]{1,}" /app/www/.env > /dev/null; then
-        export APP_KEY=$(s6-setuidgid abc php /app/www/artisan key:generate --show)
-        echo "An application key was generated at start up, as no environment variable was set."
-        echo "To set an application key that persists, read the docs: https://docs.speedtest-tracker.dev/"
+        echo "An application key is missing!"
+        echo "Go to https://speedtest-tracker.dev/ generate an application key."
     fi
 fi
 
