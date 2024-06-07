@@ -5,15 +5,11 @@ project_url: "https://github.com/alexjustesen/speedtest-tracker"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/speedtest-tracker-logo.png"
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a self-hosted internet performance tracking application that runs speedtest checks against Ookla's Speedtest service."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-project_blurb_optional_extras_enabled: false
 
 # supported architectures
 available_architectures:
   - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
-# development version
-development_versions: false
 
 # container parameters
 common_param_env_vars_enabled: true
@@ -26,7 +22,7 @@ param_env_vars:
   - { env_var: "SPEEDTEST_SERVERS", env_value: "", desc: "A comma-separated list of server IDs to test against. Run `docker exec speedtest-tracker php /app/www/artisan app:ookla-list-servers` to get a list of nearby servers." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "Contains speedtest-tracker config and database, if using sqlite." }
+  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Contains speedtest-tracker config and database, if using sqlite." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "80", internal_port: "80", port_desc: "Web UI" }
