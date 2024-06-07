@@ -22,6 +22,8 @@ param_usage_include_env: true
 param_env_vars:
   - { env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. You can generate a key at [https://speedtest-tracker.dev](https://speedtest-tracker.dev)" }
   - { env_var: "DB_CONNECTION", env_value: "sqlite", desc: "Set the database type to use. `sqlite`, `pgsql`, or `mysql`" }
+  - { env_var: "SPEEDTEST_SCHEDULE", env_value: "", desc: "Set the test schedule in cron format. e.g. `0 */6 * * *`" }
+  - { env_var: "SPEEDTEST_SERVERS", env_value: "", desc: "A comma-separated list of server IDs to test against. Run `docker exec speedtest-tracker php /app/www/artisan app:ookla-list-servers` to get a list of nearby servers." }
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "Contains speedtest-tracker config and database, if using sqlite." }
@@ -36,6 +38,8 @@ opt_param_env_vars:
   - { env_var: "DB_DATABASE", env_value: "", desc: "Database name (postgres/mysql)." }
   - { env_var: "DB_USERNAME", env_value: "", desc: "Database username (postgres/mysql)." }
   - { env_var: "DB_PASSWORD", env_value: "", desc: "Database password (postgres/mysql)." }
+  - { env_var: "DISPLAY_TIMEZONE", env_value: "Etc/UTC", desc: "Timezone for the UI." }
+  - { env_var: "PRUNE_RESULTS_OLDER_THAN", env_value: "0", desc: "Days to keep test results." }
 
 # application setup block
 app_setup_block_enabled: true
