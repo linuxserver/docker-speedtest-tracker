@@ -77,13 +77,17 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
+      - APP_KEY=
       - DB_CONNECTION=sqlite
-      - APP_KEY= #optional
+      - SPEEDTEST_SCHEDULE=
+      - SPEEDTEST_SERVERS=
       - DB_HOST= #optional
       - DB_PORT= #optional
       - DB_DATABASE= #optional
       - DB_USERNAME= #optional
       - DB_PASSWORD= #optional
+      - DISPLAY_TIMEZONE=Etc/UTC #optional
+      - PRUNE_RESULTS_OLDER_THAN=0 #optional
     volumes:
       - /path/to/data:/config
     ports:
@@ -99,13 +103,17 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
+  -e APP_KEY= \
   -e DB_CONNECTION=sqlite \
-  -e APP_KEY= `#optional` \
+  -e SPEEDTEST_SCHEDULE= \
+  -e SPEEDTEST_SERVERS= \
   -e DB_HOST= `#optional` \
   -e DB_PORT= `#optional` \
   -e DB_DATABASE= `#optional` \
   -e DB_USERNAME= `#optional` \
   -e DB_PASSWORD= `#optional` \
+  -e DISPLAY_TIMEZONE=Etc/UTC `#optional` \
+  -e PRUNE_RESULTS_OLDER_THAN=0 `#optional` \
   -p 80:80 \
   -v /path/to/data:/config \
   --restart unless-stopped \
@@ -122,13 +130,17 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
+| `-e APP_KEY=` | App key used for encrypting stored data. You can generate a key at [https://speedtest-tracker.dev](https://speedtest-tracker.dev) |
 | `-e DB_CONNECTION=sqlite` | Set the database type to use. `sqlite`, `pgsql`, or `mysql` |
-| `-e APP_KEY=` | App key used for encrypting stored data. Generate with `docker exec speedtest-tracker php /app/www/artisan key:generate --show` |
+| `-e SPEEDTEST_SCHEDULE=` | Set the test schedule in cron format. e.g. `0 */6 * * *` |
+| `-e SPEEDTEST_SERVERS=` | A comma-separated list of server IDs to test against. Run `docker exec speedtest-tracker php /app/www/artisan app:ookla-list-servers` to get a list of nearby servers. |
 | `-e DB_HOST=` | Database hostname (postgres/mysql). |
 | `-e DB_PORT=` | Database port (postgres/mysql). |
 | `-e DB_DATABASE=` | Database name (postgres/mysql). |
 | `-e DB_USERNAME=` | Database username (postgres/mysql). |
 | `-e DB_PASSWORD=` | Database password (postgres/mysql). |
+| `-e DISPLAY_TIMEZONE=Etc/UTC` | Timezone for the UI. |
+| `-e PRUNE_RESULTS_OLDER_THAN=0` | Days to keep test results. |
 | `-v /config` | Contains speedtest-tracker config and database, if using sqlite. |
 
 ## Environment variables from files (Docker secrets)
@@ -292,6 +304,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **07.06.24:** - Cache Filament components and added APP_KEY as a required param.
 * **27.05.24:** - Existing users should update their nginx confs to avoid http2 deprecation warnings.
 * **24.05.24:** - Rebase to Alpine 3.20.
 * **16.04.24:** - Rebase to Alpine 3.19, upgrade to php 8.3.
