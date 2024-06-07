@@ -20,6 +20,7 @@ common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_env: true
 param_env_vars:
+  - { env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. Get a key at https://speedtest-tracker.dev" }
   - { env_var: "DB_CONNECTION", env_value: "sqlite", desc: "Set the database type to use. `sqlite`, `pgsql`, or `mysql`" }
 param_usage_include_vols: true
 param_volumes:
@@ -30,7 +31,6 @@ param_ports:
 
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. Generate with `docker exec speedtest-tracker php /app/www/artisan key:generate --show`" }
   - { env_var: "DB_HOST", env_value: "", desc: "Database hostname (postgres/mysql)." }
   - { env_var: "DB_PORT", env_value: "", desc: "Database port (postgres/mysql)." }
   - { env_var: "DB_DATABASE", env_value: "", desc: "Database name (postgres/mysql)." }
@@ -44,6 +44,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "07.06.24:", desc: "Cache Filament components and added APP_KEY as a required param." }
   - { date: "27.05.24:", desc: "Existing users should update their nginx confs to avoid http2 deprecation warnings." }
   - { date: "24.05.24:", desc: "Rebase to Alpine 3.20." }
   - { date: "16.04.24:", desc: "Rebase to Alpine 3.19, upgrade to php 8.3." }
