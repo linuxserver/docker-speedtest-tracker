@@ -20,7 +20,7 @@ common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. Get a key at https://speedtest-tracker.dev" }
+  - { env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. You can generate a key at https://speedtest-tracker.dev" }
   - { env_var: "DB_CONNECTION", env_value: "sqlite", desc: "Set the database type to use. `sqlite`, `pgsql`, or `mysql`" }
 param_usage_include_vols: true
 param_volumes:
