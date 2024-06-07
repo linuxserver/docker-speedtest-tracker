@@ -89,7 +89,7 @@ services:
       - DISPLAY_TIMEZONE=Etc/UTC #optional
       - PRUNE_RESULTS_OLDER_THAN=0 #optional
     volumes:
-      - /path/to/data:/config
+      - /path/to/speedtest-tracker/data:/config
     ports:
       - 80:80
     restart: unless-stopped
@@ -115,7 +115,7 @@ docker run -d \
   -e DISPLAY_TIMEZONE=Etc/UTC `#optional` \
   -e PRUNE_RESULTS_OLDER_THAN=0 `#optional` \
   -p 80:80 \
-  -v /path/to/data:/config \
+  -v /path/to/speedtest-tracker/data:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/speedtest-tracker:latest
 ```
