@@ -34,7 +34,7 @@ pipeline {
     CI_PORT='80'
     CI_SSL='false'
     CI_DELAY='60'
-    CI_DOCKERENV='APP_KEY=base64:w4fvYUSRozulci8bYVk9wCaRVge3PMF7ixo9fDz9T7o='
+    CI_DOCKERENV='APP_KEY=base64:w4fvYUSRozulci8bYVk9wCaRVge3PMF7ixo9fDz9T7o'
     CI_AUTH=''
     CI_WEBPATH=''
   }
