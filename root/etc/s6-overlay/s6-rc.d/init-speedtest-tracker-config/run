@@ -92,8 +92,8 @@ if [[ -z ${APP_KEY} ]]; then
 fi
 
 # Build cache
-s6-setuidgid abc php /app/www/artisan view:clear --no-ansi -q
 s6-setuidgid abc php /app/www/artisan optimize --no-ansi -q
+s6-setuidgid abc php /app/www/artisan filament:cache-components --no-ansi -q
 
 # Migrate database
 s6-setuidgid abc php /app/www/artisan migrate --force --no-ansi -q
