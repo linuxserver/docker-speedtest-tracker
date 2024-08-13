@@ -27,14 +27,11 @@ elif [[ "${DB_CONNECTION}" = "mysql" ]]; then
     END=$((SECONDS + 30))
     while [[ ${SECONDS} -lt ${END} ]] && [[ -n "${DB_HOST+x}" ]]; do
         if [[ $(/usr/bin/nc -w1 "${DB_HOST}" "${DB_PORT}" | tr -d '\0') ]]; then
-            if [[ -n "${RUN}" ]]; then
-                break
-            fi
-            RUN="RAN"
-            # we sleep here again due to first run init on DB containers
             if [[ ! -f /dbwait.lock ]]; then
                 sleep 5
             fi
+            touch /dbwait.lock
+            break
         else
             sleep 1
         fi
@@ -44,14 +41,11 @@ elif [[ "${DB_CONNECTION}" = "pgsql" ]]; then
     END=$((SECONDS + 30))
     while [[ ${SECONDS} -lt ${END} ]] && [[ -n "${DB_HOST+x}" ]]; do
         if pg_isready -h "${DB_HOST}" -p "${DB_PORT}" -q; then
-            if [[ -n "${RUN}" ]]; then
-                break
-            fi
-            RUN="RAN"
-            # we sleep here again due to first run init on DB containers
             if [[ ! -f /dbwait.lock ]]; then
                 sleep 5
             fi
+            touch /dbwait.lock
+            break
         else
             sleep 1
         fi
