@@ -8,7 +8,7 @@ anourvalar/eloquent-serialize                1.2.23                 php-composer
 aom-libs                                     3.9.1-r0               apk             
 apache2-utils                                2.4.62-r0              apk             
 apk-tools                                    2.14.4-r0              apk             
-apr                                          1.7.4-r0               apk             
+apr                                          1.7.5-r0               apk             
 apr-util                                     1.6.3-r1               apk             
 argon2-libs                                  20190702-r5            apk             
 awcodes/filament-versions                    v2.0.1                 php-composer    
@@ -26,12 +26,12 @@ carbonphp/carbon-doctrine-types              2.1.0                  php-composer
 catatonit                                    0.2.0-r0               apk             
 chrisullyott/php-filesize                    v4.2.1                 php-composer    
 clue/stream-filter                           v1.7.0                 php-composer    
-composer                                     2.7.8                  binary          
+composer                                     2.7.9                  binary          
 coreutils                                    9.5-r1                 apk             
 coreutils-env                                9.5-r1                 apk             
 coreutils-fmt                                9.5-r1                 apk             
 coreutils-sha512sum                          9.5-r1                 apk             
-curl                                         8.9.0-r0               apk             
+curl                                         8.9.1-r1               apk             
 danharrin/date-format-converter              v0.3.1                 php-composer    
 danharrin/livewire-rate-limiting             v1.3.1                 php-composer    
 dflydev/dot-access-data                      v3.0.3                 php-composer    
@@ -88,11 +88,11 @@ libattr                                      2.5.2-r0               apk
 libavif                                      1.0.4-r0               apk             
 libbsd                                       0.12.2-r0              apk             
 libbz2                                       1.0.8-r6               apk             
-libcrypto3                                   3.3.1-r3               apk             
-libcurl                                      8.9.0-r0               apk             
+libcrypto3                                   3.3.2-r0               apk             
+libcurl                                      8.9.1-r1               apk             
 libdav1d                                     1.4.2-r0               apk             
 libedit                                      20240517.3.1-r0        apk             
-libexpat                                     2.6.2-r0               apk             
+libexpat                                     2.6.3-r0               apk             
 libgcc                                       13.2.1_git20240309-r0  apk             
 libice                                       1.1.1-r6               apk             
 libidn2                                      2.3.7-r0               apk             
@@ -106,7 +106,7 @@ libproc2                                     4.0.4-r0               apk
 libpsl                                       0.21.5-r1              apk             
 libsharpyuv                                  1.3.2-r0               apk             
 libsm                                        1.2.4-r4               apk             
-libssl3                                      3.3.1-r3               apk             
+libssl3                                      3.3.2-r0               apk             
 libstdc++                                    13.2.1_git20240309-r0  apk             
 libunistring                                 1.2-r0                 apk             
 libuuid                                      2.40.1-r1              apk             
@@ -144,7 +144,7 @@ nikic/php-parser                             v5.1.0                 php-composer
 nunomaduro/termwind                          v2.0.1                 php-composer    
 oniguruma                                    6.9.9-r0               apk             
 openspout/openspout                          v4.24.5                php-composer    
-openssl                                      3.3.1-r3               apk             
+openssl                                      3.3.2-r0               apk             
 pcre                                         8.45-r3                apk             
 pcre2                                        10.43-r0               apk             
 php-http/client-common                       2.7.1                  php-composer    
