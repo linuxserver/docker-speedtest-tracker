@@ -171,7 +171,7 @@ php83-pdo_pgsql                              8.3.12-r0              apk
 php83-pdo_sqlite                             8.3.12-r0              apk             
 php83-pecl-igbinary                          3.2.15-r0              apk             
 php83-pecl-msgpack                           2.2.0-r2               apk             
-php83-pecl-redis                             6.0.2-r0               apk             
+php83-pecl-redis                             6.1.0-r0               apk             
 php83-phar                                   8.3.12-r0              apk             
 php83-session                                8.3.12-r0              apk             
 php83-simplexml                              8.3.12-r0              apk             
