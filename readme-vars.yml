@@ -40,7 +40,13 @@ opt_param_env_vars:
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
-  Access the web UI at `<your-ip>:80`, for more information check out the [project documentation](https://docs.speedtest-tracker.dev/).
+  Access the web UI at `<your-ip>:80`. Use the default username and password to log in:
+
+  - admin@example.com
+  - password
+  
+  Remember to change the password at least.
+  Read more on [project documentation](https://docs.speedtest-tracker.dev/).
 
 # changelog
 changelogs:
