@@ -61,6 +61,7 @@ The architectures supported by this image are:
 
 Access the web UI at `<your-ip>:80`, for more information check out the [project documentation](https://docs.speedtest-tracker.dev/).
 
+ 
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -295,10 +296,10 @@ docker build \
   -t lscr.io/linuxserver/speedtest-tracker:latest .
 ```
 
-The ARM variants can be built on x86_64 hardware using `multiarch/qemu-user-static`
+The ARM variants can be built on x86_64 hardware and vice versa using `lscr.io/linuxserver/qemu-static`
 
 ```bash
-docker run --rm --privileged multiarch/qemu-user-static:register --reset
+docker run --rm --privileged lscr.io/linuxserver/qemu-static --reset
 ```
 
 Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64`.
