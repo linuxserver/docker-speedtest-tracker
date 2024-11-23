@@ -99,7 +99,7 @@ libjpeg-turbo                                3.0.3-r0               apk
 libmd                                        1.1.0-r0               apk             
 libncursesw                                  6.4_p20240420-r1       apk             
 libpng                                       1.6.44-r0              apk             
-libpq                                        16.5-r0                apk             
+libpq                                        16.6-r0                apk             
 libproc2                                     4.0.4-r0               apk             
 libpsl                                       0.21.5-r1              apk             
 libsharpyuv                                  1.3.2-r0               apk             
@@ -185,7 +185,7 @@ phpoption/phpoption                          1.9.3                  php-composer
 phpstan/phpdoc-parser                        2.0.0                  php-composer    
 popt                                         1.19-r3                apk             
 postgresql-common                            1.2-r1                 apk             
-postgresql15-client                          15.9-r0                apk             
+postgresql15-client                          15.10-r0               apk             
 procps-ng                                    4.0.4-r0               apk             
 psr/cache                                    3.0.0                  php-composer    
 psr/clock                                    1.0.0                  php-composer    
