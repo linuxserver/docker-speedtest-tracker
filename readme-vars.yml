@@ -5,48 +5,100 @@ project_url: "https://github.com/alexjustesen/speedtest-tracker"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/speedtest-tracker-logo.png"
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a self-hosted internet performance tracking application that runs speedtest checks against Ookla's Speedtest service."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. You can generate a key at [https://speedtest-tracker.dev](https://speedtest-tracker.dev)" }
-  - { env_var: "APP_URL", env_value: "", desc: "The IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`"}
-  - { env_var: "DB_CONNECTION", env_value: "sqlite", desc: "Set the database type to use. `sqlite`, `pgsql`, or `mysql`" }
-  - { env_var: "SPEEDTEST_SCHEDULE", env_value: "", desc: "Set the test schedule in cron format. e.g. `0 */6 * * *`" }
-  - { env_var: "SPEEDTEST_SERVERS", env_value: "", desc: "A comma-separated list of server IDs to test against. Run `docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/speedtest-tracker:latest list-servers` to get a list of nearby servers." }
+  - {env_var: "APP_KEY", env_value: "", desc: "App key used for encrypting stored data. You can generate a key at [https://speedtest-tracker.dev](https://speedtest-tracker.dev)"}
+  - {env_var: "APP_URL", env_value: "", desc: "The IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`"}
+  - {env_var: "DB_CONNECTION", env_value: "sqlite", desc: "Set the database type to use. `sqlite`, `pgsql`, or `mysql`"}
+  - {env_var: "SPEEDTEST_SCHEDULE", env_value: "", desc: "Set the test schedule in cron format. e.g. `0 */6 * * *`"}
+  - {env_var: "SPEEDTEST_SERVERS", env_value: "", desc: "A comma-separated list of server IDs to test against. Run `docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/speedtest-tracker:latest list-servers` to get a list of nearby servers."}
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Contains speedtest-tracker config and database, if using sqlite." }
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Contains speedtest-tracker config and database, if using sqlite."}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "80", internal_port: "80", port_desc: "Web UI" }
-
+  - {external_port: "80", internal_port: "80", port_desc: "Web UI"}
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "DB_HOST", env_value: "", desc: "Database hostname (postgres/mysql)." }
-  - { env_var: "DB_PORT", env_value: "", desc: "Database port (postgres/mysql)." }
-  - { env_var: "DB_DATABASE", env_value: "", desc: "Database name (postgres/mysql)." }
-  - { env_var: "DB_USERNAME", env_value: "", desc: "Database username (postgres/mysql)." }
-  - { env_var: "DB_PASSWORD", env_value: "", desc: "Database password (postgres/mysql)." }
-  - { env_var: "DISPLAY_TIMEZONE", env_value: "Etc/UTC", desc: "Timezone for the UI." }
-  - { env_var: "PRUNE_RESULTS_OLDER_THAN", env_value: "0", desc: "Days to keep test results." }
-
+  - {env_var: "DB_HOST", env_value: "", desc: "Database hostname (postgres/mysql)."}
+  - {env_var: "DB_PORT", env_value: "", desc: "Database port (postgres/mysql)."}
+  - {env_var: "DB_DATABASE", env_value: "", desc: "Database name (postgres/mysql)."}
+  - {env_var: "DB_USERNAME", env_value: "", desc: "Database username (postgres/mysql)."}
+  - {env_var: "DB_PASSWORD", env_value: "", desc: "Database password (postgres/mysql)."}
+  - {env_var: "DISPLAY_TIMEZONE", env_value: "Etc/UTC", desc: "Timezone for the UI."}
+  - {env_var: "PRUNE_RESULTS_OLDER_THAN", env_value: "0", desc: "Days to keep test results."}
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
   Access the web UI at `<your-ip>:80`, for more information check out the [project documentation](https://docs.speedtest-tracker.dev/).
-
+# init diagram
+init_diagram: |
+  "speedtest-tracker:latest": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-nginx-end -> init-config
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-speedtest-tracker-config -> init-config-end
+    init-os-end -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    init-os-end -> init-folders
+    init-php -> init-keygen
+    base -> init-migrations
+    base -> init-mods
+    init-config-end -> init-mods
+    init-version-checks -> init-mods
+    init-mods -> init-mods-end
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    init-samples -> init-nginx
+    init-permissions -> init-nginx-end
+    base -> init-os-end
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-migrations -> init-os-end
+    init-keygen -> init-permissions
+    init-nginx -> init-php
+    init-folders -> init-samples
+    init-custom-files -> init-services
+    init-mods-end -> init-services
+    init-nginx-end -> init-speedtest-tracker-config
+    init-config-end -> init-version-checks
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-nginx
+    svc-nginx -> legacy-services
+    init-services -> svc-php-fpm
+    svc-php-fpm -> legacy-services
+    init-services -> svc-speedtest-tracker
+    svc-speedtest-tracker -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine-nginx:3.20" <- "baseimage-alpine:3.20"
+  }
+  "speedtest-tracker:latest" <- Base Images
 # changelog
 changelogs:
-  - { date: "07.06.24:", desc: "Cache Filament components and added APP_KEY as a required param." }
-  - { date: "27.05.24:", desc: "Existing users should update their nginx confs to avoid http2 deprecation warnings." }
-  - { date: "24.05.24:", desc: "Rebase to Alpine 3.20." }
-  - { date: "16.04.24:", desc: "Rebase to Alpine 3.19, upgrade to php 8.3." }
-  - { date: "10.02.24:", desc: "Initial Release." }
+  - {date: "07.06.24:", desc: "Cache Filament components and added APP_KEY as a required param."}
+  - {date: "27.05.24:", desc: "Existing users should update their nginx confs to avoid http2 deprecation warnings."}
+  - {date: "24.05.24:", desc: "Rebase to Alpine 3.20."}
+  - {date: "16.04.24:", desc: "Rebase to Alpine 3.19, upgrade to php 8.3."}
+  - {date: "10.02.24:", desc: "Initial Release."}
