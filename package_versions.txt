@@ -7,7 +7,7 @@ alpine-release                               3.20.3-r0              apk
 anourvalar/eloquent-serialize                1.2.27                 php-composer    
 aom-libs                                     3.9.1-r0               apk             
 apache2-utils                                2.4.62-r0              apk             
-apk-tools                                    2.14.4-r0              apk             
+apk-tools                                    2.14.4-r1              apk             
 apr                                          1.7.5-r0               apk             
 apr-util                                     1.6.3-r1               apk             
 argon2-libs                                  20190702-r5            apk             
@@ -26,12 +26,12 @@ carbonphp/carbon-doctrine-types              3.2.0                  php-composer
 catatonit                                    0.2.0-r0               apk             
 chrisullyott/php-filesize                    v4.2.1                 php-composer    
 clue/stream-filter                           v1.7.0                 php-composer    
-composer                                     2.8.3                  binary          
+composer                                     2.8.4                  binary          
 coreutils                                    9.5-r1                 apk             
 coreutils-env                                9.5-r1                 apk             
 coreutils-fmt                                9.5-r1                 apk             
 coreutils-sha512sum                          9.5-r1                 apk             
-curl                                         8.9.1-r2               apk             
+curl                                         8.11.0-r2              apk             
 danharrin/date-format-converter              v0.3.1                 php-composer    
 danharrin/livewire-rate-limiting             v1.3.1                 php-composer    
 dflydev/dot-access-data                      v3.0.3                 php-composer    
@@ -68,7 +68,7 @@ influxdata/influxdb-client-php               3.6.0                  php-composer
 jq                                           1.7.1-r0               apk             
 kirschbaum-development/eloquent-power-joins  4.0.1                  php-composer    
 laravel-notification-channels/telegram       5.0.0                  php-composer    
-laravel/framework                            v11.35.0               php-composer    
+laravel/framework                            v11.35.1               php-composer    
 laravel/prompts                              v0.3.2                 php-composer    
 laravel/sanctum                              v4.0.6                 php-composer    
 laravel/serializable-closure                 v2.0.0                 php-composer    
@@ -87,7 +87,7 @@ libavif                                      1.0.4-r0               apk
 libbsd                                       0.12.2-r0              apk             
 libbz2                                       1.0.8-r6               apk             
 libcrypto3                                   3.3.2-r1               apk             
-libcurl                                      8.9.1-r2               apk             
+libcurl                                      8.11.0-r2              apk             
 libdav1d                                     1.4.2-r0               apk             
 libedit                                      20240517.3.1-r0        apk             
 libexpat                                     2.6.4-r0               apk             
@@ -97,7 +97,7 @@ libidn2                                      2.3.7-r0               apk
 libintl                                      0.22.5-r0              apk             
 libjpeg-turbo                                3.0.3-r0               apk             
 libmd                                        1.1.0-r0               apk             
-libncursesw                                  6.4_p20240420-r1       apk             
+libncursesw                                  6.4_p20240420-r2       apk             
 libpng                                       1.6.44-r0              apk             
 libpq                                        16.6-r0                apk             
 libproc2                                     4.0.4-r0               apk             
@@ -131,7 +131,7 @@ musl                                         1.2.5-r0               apk
 musl-utils                                   1.2.5-r0               apk             
 myclabs/php-enum                             1.8.4                  php-composer    
 nano                                         8.0-r0                 apk             
-ncurses-terminfo-base                        6.4_p20240420-r1       apk             
+ncurses-terminfo-base                        6.4_p20240420-r2       apk             
 nesbot/carbon                                3.8.2                  php-composer    
 netcat-openbsd                               1.226-r0               apk             
 nette/schema                                 v1.3.2                 php-composer    
