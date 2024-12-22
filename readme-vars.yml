@@ -97,6 +97,7 @@ init_diagram: |
   "speedtest-tracker:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "20.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "07.06.24:", desc: "Cache Filament components and added APP_KEY as a required param."}
   - {date: "27.05.24:", desc: "Existing users should update their nginx confs to avoid http2 deprecation warnings."}
   - {date: "24.05.24:", desc: "Rebase to Alpine 3.20."}
