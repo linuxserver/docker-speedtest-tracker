@@ -59,7 +59,9 @@ The architectures supported by this image are:
 
 ## Application Setup
 
-Access the web UI at `<your-ip>:80`, for more information check out the [project documentation](https://docs.speedtest-tracker.dev/).
+Access the web UI at `<your-ip>:80`, the default credentials are admin@example.com / password
+
+For more information check out the [project documentation](https://docs.speedtest-tracker.dev/).
 
 ## Usage
 
