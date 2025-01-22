@@ -5,6 +5,7 @@ project_url: "https://github.com/alexjustesen/speedtest-tracker"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/speedtest-tracker-logo.png"
 project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a self-hosted internet performance tracking application that runs speedtest checks against Ookla's Speedtest service."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "Monitoring"
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
