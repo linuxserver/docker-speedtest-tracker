@@ -4,11 +4,11 @@ acl-libs                                     2.3.2-r1          apk
 alpine-baselayout                            3.6.8-r1          apk             
 alpine-baselayout-data                       3.6.8-r1          apk             
 alpine-keys                                  2.5-r0            apk             
-alpine-release                               3.21.2-r0         apk             
+alpine-release                               3.21.3-r0         apk             
 anourvalar/eloquent-serialize                1.2.28            php-composer    
 aom-libs                                     3.11.0-r0         apk             
 apache2-utils                                2.4.62-r0         apk             
-apk-tools                                    2.14.6-r2         apk             
+apk-tools                                    2.14.6-r3         apk             
 apr                                          1.7.5-r0          apk             
 apr-util                                     1.6.3-r1          apk             
 argon2-libs                                  20190702-r5       apk             
@@ -32,7 +32,7 @@ coreutils                                    9.5-r2            apk
 coreutils-env                                9.5-r2            apk             
 coreutils-fmt                                9.5-r2            apk             
 coreutils-sha512sum                          9.5-r2            apk             
-curl                                         8.12.0-r0         apk             
+curl                                         8.12.1-r0         apk             
 danharrin/date-format-converter              v0.3.1            php-composer    
 danharrin/livewire-rate-limiting             v1.3.1            php-composer    
 dflydev/dot-access-data                      v3.0.3            php-composer    
@@ -87,7 +87,7 @@ libavif                                      1.0.4-r0          apk
 libbsd                                       0.12.2-r0         apk             
 libbz2                                       1.0.8-r6          apk             
 libcrypto3                                   3.3.3-r0          apk             
-libcurl                                      8.12.0-r0         apk             
+libcurl                                      8.12.1-r0         apk             
 libdav1d                                     1.5.0-r0          apk             
 libedit                                      20240808.3.1-r0   apk             
 libexpat                                     2.6.4-r0          apk             
@@ -127,8 +127,8 @@ lz4-libs                                     1.10.0-r0         apk
 maennchen/zipstream-php                      2.4.0             php-composer    
 masterminds/html5                            2.9.0             php-composer    
 monolog/monolog                              3.8.1             php-composer    
-musl                                         1.2.5-r8          apk             
-musl-utils                                   1.2.5-r8          apk             
+musl                                         1.2.5-r9          apk             
+musl-utils                                   1.2.5-r9          apk             
 myclabs/php-enum                             1.8.5             php-composer    
 nano                                         8.2-r0            apk             
 ncurses-terminfo-base                        6.5_p20241006-r3  apk             
@@ -250,7 +250,7 @@ symfony/var-dumper                           v7.2.3            php-composer
 symfony/yaml                                 v7.2.3            php-composer    
 tijsverkoyen/css-to-inline-styles            v2.3.0            php-composer    
 timokoerber/laravel-one-time-operations      1.4.4             php-composer    
-tzdata                                       2024b-r1          apk             
+tzdata                                       2025a-r0          apk             
 utmps-libs                                   0.1.2.3-r2        apk             
 vlucas/phpdotenv                             v5.6.1            php-composer    
 voku/portable-ascii                          2.0.3             php-composer    
