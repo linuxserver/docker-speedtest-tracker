@@ -27,7 +27,7 @@ carbonphp/carbon-doctrine-types              3.2.0             php-composer
 catatonit                                    0.2.0-r0          apk             
 chrisullyott/php-filesize                    v4.2.1            php-composer    
 clue/stream-filter                           v1.7.0            php-composer    
-composer                                     2.8.5             binary          
+composer                                     2.8.6             binary          
 coreutils                                    9.5-r2            apk             
 coreutils-env                                9.5-r2            apk             
 coreutils-fmt                                9.5-r2            apk             
