@@ -68,7 +68,7 @@ influxdata/influxdb-client-php               3.7.0             php-composer
 jq                                           1.7.1-r0          apk             
 kirschbaum-development/eloquent-power-joins  4.2.3             php-composer    
 laravel-notification-channels/telegram       6.0.0             php-composer    
-laravel/framework                            v12.9.0           php-composer    
+laravel/framework                            v12.9.2           php-composer    
 laravel/prompts                              v0.3.5            php-composer    
 laravel/sanctum                              v4.0.8            php-composer    
 laravel/serializable-closure                 v2.0.4            php-composer    
@@ -207,7 +207,7 @@ spatie/color                                 1.8.0             php-composer
 spatie/invade                                2.1.0             php-composer    
 spatie/laravel-json-api-paginate             1.16.3            php-composer    
 spatie/laravel-package-tools                 1.92.4            php-composer    
-spatie/laravel-query-builder                 6.3.1             php-composer    
+spatie/laravel-query-builder                 6.3.2             php-composer    
 spatie/laravel-settings                      3.4.4             php-composer    
 spatie/laravel-webhook-server                3.8.3             php-composer    
 spatie/temporary-directory                   2.3.0             php-composer    
