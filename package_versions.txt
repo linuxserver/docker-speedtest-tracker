@@ -211,7 +211,7 @@ spatie/laravel-query-builder                 6.3.2             php-composer
 spatie/laravel-settings                      3.4.4             php-composer    
 spatie/laravel-webhook-server                3.8.3             php-composer    
 spatie/temporary-directory                   2.3.0             php-composer    
-sqlite-libs                                  3.48.0-r1         apk             
+sqlite-libs                                  3.48.0-r2         apk             
 ssl_client                                   1.37.0-r12        apk             
 ssmtp                                        2.64-r22          apk             
 swagger-php-tools                            1.0.0             npm             
