@@ -40,7 +40,7 @@ elif [[ "${DB_CONNECTION}" = "pgsql" ]]; then
     echo "Waiting for DB to be available"
     END=$((SECONDS + 30))
     while [[ ${SECONDS} -lt ${END} ]] && [[ -n "${DB_HOST+x}" ]]; do
-        if pg_isready -h "${DB_HOST}" -p "${DB_PORT}" -q; then
+        if pg_isready -h "${DB_HOST}" -p "${DB_PORT}" -U "${DB_USERNAME}" -q; then
             if [[ ! -f /dbwait.lock ]]; then
                 sleep 5
             fi
