@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.21
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.22
 
 ARG BUILD_DATE
 ARG VERSION
@@ -13,15 +13,15 @@ ENV HOME=/config
 RUN \
   apk add --no-cache \
     grep \
-    php83-gd \
-    php83-intl \
-    php83-pdo_mysql \
-    php83-pdo_pgsql \
-    php83-pdo_sqlite \
-    php83-pecl-redis \
-    php83-tokenizer \
-    php83-xmlreader \
-    postgresql15-client \
+    php84-gd \
+    php84-intl \
+    php84-pdo_mysql \
+    php84-pdo_pgsql \
+    php84-pdo_sqlite \
+    php84-pecl-redis \
+    php84-tokenizer \
+    php84-xmlreader \
+    postgresql16-client \
     ssmtp && \
   apk add --no-cache --virtual=build-dependencies \
     npm && \
@@ -38,9 +38,9 @@ RUN \
     /tmp/speedtest-cli.tgz -C \
     /usr/bin && \
   echo "**** configure php-fpm to pass env vars ****" && \
-  sed -E -i 's/^;?clear_env ?=.*$/clear_env = no/g' /etc/php83/php-fpm.d/www.conf && \
-  grep -qxF 'clear_env = no' /etc/php83/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php83/php-fpm.d/www.conf && \
-  echo "env[PATH] = /usr/local/bin:/usr/bin:/bin" >> /etc/php83/php-fpm.conf && \
+  sed -E -i 's/^;?clear_env ?=.*$/clear_env = no/g' /etc/php84/php-fpm.d/www.conf && \
+  grep -qxF 'clear_env = no' /etc/php84/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php84/php-fpm.d/www.conf && \
+  echo "env[PATH] = /usr/local/bin:/usr/bin:/bin" >> /etc/php84/php-fpm.conf && \
   echo "*** install speedtest-tracker ***" && \
   if [ -z ${SPEEDTEST_TRACKER_VERSION+x} ]; then \
     SPEEDTEST_TRACKER_VERSION=$(curl -sX GET "https://api.github.com/repos/alexjustesen/speedtest-tracker/releases/latest" \
@@ -64,12 +64,12 @@ RUN \
   echo "**** setup php opcache ****" && \
   { \
     echo 'opcache.enable_cli=1'; \
-  } > /etc/php83/conf.d/opcache-recommended.ini; \
+  } > /etc/php84/conf.d/opcache-recommended.ini; \
   { \
     echo 'post_max_size = 100M'; \
     echo 'upload_max_filesize = 100M'; \
     echo 'variables_order = EGPCS'; \
-  } > /etc/php83/conf.d/php-misc.ini && \
+  } > /etc/php84/conf.d/php-misc.ini && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   apk del --purge build-dependencies && \
