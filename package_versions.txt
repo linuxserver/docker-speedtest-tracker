@@ -173,7 +173,7 @@ php84-pdo_pgsql                              8.4.14-r0             apk
 php84-pdo_sqlite                             8.4.14-r0             apk             
 php84-pecl-igbinary                          3.2.16-r1             apk             
 php84-pecl-msgpack                           3.0.0-r0              apk             
-php84-pecl-redis                             6.2.0-r0              apk             
+php84-pecl-redis                             6.3.0-r0              apk             
 php84-phar                                   8.4.14-r0             apk             
 php84-session                                8.4.14-r0             apk             
 php84-simplexml                              8.4.14-r0             apk             
