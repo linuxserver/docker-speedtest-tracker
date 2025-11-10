@@ -310,6 +310,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **11.10.25:** - Update nginx configs for v1.7.2. Existing users should update their nginx confs to avoid errors.
 * **05.07.25:** - Rebase to Alpine 3.22.
 * **20.12.24:** - Rebase to Alpine 3.21.
 * **07.06.24:** - Cache Filament components and added APP_KEY as a required param.
