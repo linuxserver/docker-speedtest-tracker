@@ -189,7 +189,7 @@ phpoption/phpoption                          1.9.4                 php-composer
 phpstan/phpdoc-parser                        2.3.0                 php-composer    
 popt                                         1.19-r4               apk             
 postgresql-common                            1.2-r1                apk             
-postgresql16-client                          16.10-r0              apk             
+postgresql16-client                          16.11-r0              apk             
 pragmarx/google2fa                           v8.0.3                php-composer    
 pragmarx/google2fa-qrcode                    v3.0.1                php-composer    
 procps-ng                                    4.0.4-r3              apk             
