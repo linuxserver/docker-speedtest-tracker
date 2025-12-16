@@ -12,6 +12,7 @@ ENV HOME=/config
 
 RUN \
   apk add --no-cache \
+    iputils \
     grep \
     php84-gd \
     php84-intl \
