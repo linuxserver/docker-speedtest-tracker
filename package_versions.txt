@@ -67,6 +67,11 @@ guzzlehttp/uri-template                      v1.0.5                php-composer
 icu-data-en                                  76.1-r1               apk             
 icu-libs                                     76.1-r1               apk             
 influxdata/influxdb-client-php               3.8.0                 php-composer    
+iputils                                      20240905-r0           apk             
+iputils-arping                               20240905-r0           apk             
+iputils-clockdiff                            20240905-r0           apk             
+iputils-ping                                 20240905-r0           apk             
+iputils-tracepath                            20240905-r0           apk             
 jq                                           1.8.1-r0              apk             
 kirschbaum-development/eloquent-power-joins  4.2.10                php-composer    
 laravel-notification-channels/telegram       6.0.0                 php-composer    
@@ -88,6 +93,7 @@ libattr                                      2.5.2-r2              apk
 libavif                                      1.3.0-r0              apk             
 libbsd                                       0.12.2-r0             apk             
 libbz2                                       1.0.8-r6              apk             
+libcap2                                      2.76-r0               apk             
 libcrypto3                                   3.5.4-r0              apk             
 libcurl                                      8.14.1-r2             apk             
 libdav1d                                     1.5.1-r0              apk             
