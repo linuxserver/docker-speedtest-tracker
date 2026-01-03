@@ -29,7 +29,7 @@ chillerlan/php-settings-container            3.2.1                 php-composer
 chrisullyott/php-filesize                    v4.2.1                php-composer    
 clue/stream-filter                           v1.7.0                php-composer    
 codewithdennis/filament-simple-alert         v4.0.2                php-composer    
-composer                                     2.9.2                 binary          
+composer                                     2.9.3                 binary          
 coreutils                                    9.7-r1                apk             
 coreutils-env                                9.7-r1                apk             
 coreutils-fmt                                9.7-r1                apk             
