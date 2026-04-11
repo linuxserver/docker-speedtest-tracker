@@ -93,7 +93,7 @@ libattr                                      2.5.2-r2              apk
 libavif                                      1.3.0-r0              apk             
 libbsd                                       0.12.2-r0             apk             
 libbz2                                       1.0.8-r6              apk             
-libcap2                                      2.76-r0               apk             
+libcap2                                      2.78-r0               apk             
 libcrypto3                                   3.5.5-r0              apk             
 libcurl                                      8.14.1-r2             apk             
 libdav1d                                     1.5.1-r0              apk             
@@ -106,7 +106,7 @@ libintl                                      0.24.1-r0             apk
 libjpeg-turbo                                3.1.0-r0              apk             
 libmd                                        1.1.0-r0              apk             
 libncursesw                                  6.5_p20250503-r0      apk             
-libpng                                       1.6.56-r0             apk             
+libpng                                       1.6.57-r0             apk             
 libpq                                        17.9-r0               apk             
 libproc2                                     4.0.4-r3              apk             
 libpsl                                       0.21.5-r3             apk             
