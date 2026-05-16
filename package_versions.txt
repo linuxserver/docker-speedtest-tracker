@@ -28,7 +28,7 @@ chillerlan/php-settings-container            3.3.0                 php-composer
 chrisullyott/php-filesize                    v4.2.1                php-composer    
 clue/stream-filter                           v1.7.0                php-composer    
 codewithdennis/filament-simple-alert         v4.0.5                php-composer    
-composer                                     2.9.7                 binary          
+composer                                     2.9.8                 binary          
 coreutils                                    9.7-r1                apk             
 coreutils-env                                9.7-r1                apk             
 coreutils-fmt                                9.7-r1                apk             
@@ -145,8 +145,8 @@ netcat-openbsd                               1.229.1-r0            apk
 nette/php-generator                          v4.2.2                php-composer    
 nette/schema                                 v1.3.5                php-composer    
 nette/utils                                  v4.1.4                php-composer    
-nghttp2-libs                                 1.65.0-r0             apk             
-nginx                                        1.28.3-r0             apk             
+nghttp2-libs                                 1.69.0-r0             apk             
+nginx                                        1.28.3-r1             apk             
 nikic/php-parser                             v5.7.0                php-composer    
 nunomaduro/termwind                          v2.4.0                php-composer    
 oniguruma                                    6.9.10-r0             apk             
