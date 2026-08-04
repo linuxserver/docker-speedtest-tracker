@@ -61,7 +61,7 @@ git                                          2.54.0-r0         apk
 git-init-template                            2.54.0-r0         apk             
 graham-campbell/result-type                  v1.1.4            php-composer    
 grep                                         3.12-r0           apk             
-guzzlehttp/guzzle                            7.15.1            php-composer    
+guzzlehttp/guzzle                            7.15.2            php-composer    
 guzzlehttp/promises                          2.5.1             php-composer    
 guzzlehttp/psr7                              2.13.0            php-composer    
 guzzlehttp/uri-template                      v1.0.10           php-composer    
