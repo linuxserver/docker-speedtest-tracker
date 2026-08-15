@@ -45,7 +45,7 @@ RUN \
   echo "*** install speedtest-tracker ***" && \
   if [ -z ${SPEEDTEST_TRACKER_VERSION+x} ]; then \
     SPEEDTEST_TRACKER_VERSION=$(curl -sX GET "https://api.github.com/repos/alexjustesen/speedtest-tracker/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+    | jq -r '.tag_name'); \
   fi && \
   curl -o \
     /tmp/speedtest-tracker.tar.gz -L \
