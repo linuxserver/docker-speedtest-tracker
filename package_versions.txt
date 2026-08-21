@@ -99,7 +99,7 @@ libcrypto3                                   3.5.7-r0          apk
 libcurl                                      8.21.0-r0         apk             
 libdav1d                                     1.5.3-r0          apk             
 libedit                                      20260508.3.1-r1   apk             
-libexpat                                     2.8.2-r0          apk             
+libexpat                                     2.8.3-r0          apk             
 libgcc                                       15.2.0-r5         apk             
 libice                                       1.1.2-r0          apk             
 libidn2                                      2.3.8-r0          apk             
@@ -228,7 +228,7 @@ spatie/laravel-webhook-server                3.10.0            php-composer
 spatie/ping                                  1.2.2             php-composer    
 spatie/shiki-php                             2.4.0             php-composer    
 spatie/temporary-directory                   2.4.0             php-composer    
-sqlite-libs                                  3.53.2-r0         apk             
+sqlite-libs                                  3.53.4-r0         apk             
 ssl_client                                   1.37.0-r31        apk             
 ssmtp                                        2.64-r23          apk             
 swagger-php-tools                            1.0.0             npm             
