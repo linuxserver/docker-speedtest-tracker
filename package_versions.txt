@@ -29,7 +29,7 @@ chillerlan/php-settings-container            3.3.0             php-composer
 chrisullyott/php-filesize                    v4.2.1            php-composer    
 clue/stream-filter                           v1.7.0            php-composer    
 codewithdennis/filament-simple-alert         v4.0.5            php-composer    
-composer                                     2.10.2            binary          
+composer                                     2.10.3            binary          
 coreutils                                    9.11-r0           apk             
 coreutils-env                                9.11-r0           apk             
 coreutils-fmt                                9.11-r0           apk             
@@ -95,7 +95,7 @@ libavif                                      1.4.1-r0          apk
 libbsd                                       0.12.2-r0         apk             
 libbz2                                       1.0.8-r6          apk             
 libcap2                                      2.78-r0           apk             
-libcrypto3                                   3.5.7-r0          apk             
+libcrypto3                                   3.5.8-r0          apk             
 libcurl                                      8.21.0-r0         apk             
 libdav1d                                     1.5.3-r0          apk             
 libedit                                      20260508.3.1-r1   apk             
@@ -113,7 +113,7 @@ libproc2                                     4.0.6-r0          apk
 libpsl                                       0.21.5-r3         apk             
 libsharpyuv                                  1.6.0-r0          apk             
 libsm                                        1.2.6-r0          apk             
-libssl3                                      3.5.7-r0          apk             
+libssl3                                      3.5.8-r0          apk             
 libstdc++                                    15.2.0-r5         apk             
 libunistring                                 1.4.2-r0          apk             
 libuuid                                      2.42.1-r0         apk             
@@ -152,7 +152,7 @@ nikic/php-parser                             v5.8.0            php-composer
 nunomaduro/termwind                          v2.4.0            php-composer    
 oniguruma                                    6.9.10-r0         apk             
 openspout/openspout                          v4.32.0           php-composer    
-openssl                                      3.5.7-r0          apk             
+openssl                                      3.5.8-r0          apk             
 paragonie/constant_time_encoding             v3.1.3            php-composer    
 pcre2                                        10.47-r1          apk             
 php-http/client-common                       2.7.3             php-composer    
