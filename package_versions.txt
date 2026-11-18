@@ -149,7 +149,7 @@ nette/php-generator                          v4.2.3            php-composer
 nette/schema                                 v1.4.0            php-composer    
 nette/utils                                  v4.1.6            php-composer    
 nghttp2-libs                                 1.70.0-r0         apk             
-nginx                                        1.30.6-r0         apk             
+nginx                                        1.30.7-r0         apk             
 nikic/php-parser                             v5.9.0            php-composer    
 nunomaduro/termwind                          v2.4.0            php-composer    
 oniguruma                                    6.9.10-r0         apk             
